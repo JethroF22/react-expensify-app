@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js test
+  /usr/bin/node /usr/share/yarn/bin/yarn.js build:prod
 
 PATH: 
   /home/i/.rvm/gems/ruby-2.3.4/bin:/home/i/.rvm/gems/ruby-2.3.4@global/bin:/home/i/.rvm/rubies/ruby-2.3.4/bin:/home/i/bin:/home/i/.local/bin:/home/i/bin:/home/i/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/i/.rvm/bin:/home/i/.rvm/bin:/home/i/.rvm/bin:/home/i/.rvm/bin
@@ -22,7 +22,8 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "serve": "live-server public",
-      "build": "webpack",
+      "build:dev": "webpack",
+      "build:prod": "webpack -p",
       "dev-server": "webpack-dev-server",
       "test": "jest --config=jest.config.json"
     },
@@ -37,6 +38,7 @@ npm manifest:
       "css-loader": "0.28.4",
       "enzyme": "3.0.0",
       "enzyme-adapter-react-16": "1.0.0",
+      "enzyme-to-json": "3.0.1",
       "jest": "20.0.4",
       "live-server": "^1.2.0",
       "moment": "2.18.1",
@@ -1973,6 +1975,12 @@ Lockfile:
       lodash "^4.17.4"
       object.assign "^4.0.4"
       prop-types "^15.6.0"
+  
+  enzyme-to-json@3.0.1:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.0.1.tgz#16468e2ff3e4db817d84f9df38760abbc322273d"
+    dependencies:
+      lodash "^4.17.4"
   
   enzyme@3.0.0:
     version "3.0.0"
@@ -6076,7 +6084,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest --config=jest.config.json
+  Arguments: -c webpack -p
   Directory: /home/i/Desktop/Work/React/Courses/The Complete React Web Developer Course (with Redux)/Expensify
   Output:
   
